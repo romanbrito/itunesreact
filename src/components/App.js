@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Search from './Search'
 import Result from './Result'
 import {API} from '../constants'
+import {Main, Header} from './StyledApp'
 
 class App extends Component {
 
@@ -15,13 +16,13 @@ class App extends Component {
     const {results} = this.state
 
     return (
-      <div className="App">
-        <header className="App-header">
+      <Main>
+        <Header>
           <Search submit={this.submit} onChangeInput={this.onChangeInput}/>
-        </header>
+        </Header>
         {results.map(data =>
           <Result key={data.trackId ? data.trackId: data.collectionId} data={data}/>)}
-      </div>
+      </Main>
     )
   }
 

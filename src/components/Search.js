@@ -1,18 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
+  SearchSection,
   SearchInput,
   Label,
   SearchButton
 } from './StyledSearch'
 
 const Search = (props) =>
-  <section>
+  <SearchSection>
     <Label htmlFor="search">Search</Label>
     <SearchInput
       name="search"
       id="search"
-      placeholder="What are you looking for..."
+      placeholder="Search Itunes"
       onChange={e => props.onChangeInput(e)}
       onKeyPress={e => e.key === 'Enter' ? props.submit(e) : ''}
     />
@@ -21,11 +22,11 @@ const Search = (props) =>
     >
       Search
     </SearchButton>
-  </section>
+  </SearchSection>
 
 Search.propTypes = {
-  submit: PropTypes.func,
-  onChangeInput: PropTypes.func
+  submit: PropTypes.func.isRequired,
+  onChangeInput: PropTypes.func.isRequired
 }
 
 export default Search
