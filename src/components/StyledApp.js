@@ -6,10 +6,7 @@ export const Main = styled.main.attrs({
 })``
 
 export const Header = styled.header.attrs({
-  className: ""
+  className: "flex justify-center items-center"
 })`
-  margin-left: 5px;
-  margin-right: 5px;
-  flex: 0 1 100%;
   grid-column: 1 / -1;
 `

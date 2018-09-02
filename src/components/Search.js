@@ -9,7 +9,7 @@ import {
 
 const Search = (props) =>
   <SearchSection>
-    <Label htmlFor="search">Search</Label>
+    <Label htmlFor="search">Itunes Search</Label>
     <SearchInput
       name="search"
       id="search"
