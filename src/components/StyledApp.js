@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import '../css/App.css'
 
 export const Main = styled.main.attrs({
-  className: "App"
+  className: "App san-serif"
 })``
 
 export const Header = styled.header.attrs({
