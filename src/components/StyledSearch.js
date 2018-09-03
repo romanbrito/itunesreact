@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const SearchSection = styled.section.attrs({
-  className: "flex flex-wrap justify-center w-100"
+  className: "f3 flex flex-wrap justify-center w-100"
 })``
 
 export const SearchInput = styled.input.attrs({
@@ -10,4 +10,8 @@ export const SearchInput = styled.input.attrs({
 
 export const SearchButton = styled.button.attrs({
   className: "pointer w-100 w-20-ns"
-})`max-width: 200px;`
+})`
+  @media screen and (min-width: 480px) {
+    max-width: 200px;
+    }
+`

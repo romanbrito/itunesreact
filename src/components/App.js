@@ -34,6 +34,8 @@ class App extends Component {
     // fetching object {resultCount: int, results: [] }
     fetchTerm(artist).then(
       data => this.setState(data)
+    ).then(
+      () => showResults()
     )
   }
 
@@ -66,4 +68,15 @@ const fetchTerm = (term) => {
   }).then(data => {
     return data
   }).catch(err => console.log(err))
+}
+
+
+// Reveal results
+const showResults = () => {
+  const HEADER = document.querySelector('.header')
+  if (HEADER.getAttribute('aria-label') !== 'search') {
+    HEADER.classList.remove('vh-100')
+    HEADER.setAttribute('aria-label', 'search')
+  }
+
 }

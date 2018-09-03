@@ -2,11 +2,12 @@ import styled from 'styled-components'
 import '../css/App.css'
 
 export const Main = styled.main.attrs({
-  className: "App san-serif"
+  className: "App sans-serif"
 })``
 
 export const Header = styled.header.attrs({
-  className: "vh-100 flex justify-center flex-column items-center"
+  'aria-label': 'landing-page',
+  className: "header vh-100 flex justify-center flex-column items-center"
 })`
   grid-column: 1 / -1;
 `
