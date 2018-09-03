@@ -6,7 +6,15 @@ export const Main = styled.main.attrs({
 })``
 
 export const Header = styled.header.attrs({
-  className: "flex justify-center items-center"
+  className: "vh-100 flex justify-center flex-column items-center"
 })`
   grid-column: 1 / -1;
 `
+
+export const Title = styled.h1.attrs({
+  className: "f-4"
+})``
+
+export const Subtitle = styled.p.attrs({
+  className: "f-4"
+})``

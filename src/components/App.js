@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Search from './Search'
 import Result from './Result'
 import {API} from '../constants'
-import {Main, Header} from './StyledApp'
+import {Main, Header, Title, Subtitle} from './StyledApp'
 
 class App extends Component {
 
@@ -18,6 +18,8 @@ class App extends Component {
     return (
       <Main>
         <Header>
+          <Title>iTunes Search with React</Title>
+          <Subtitle>Your favorite artists from the iTunes library</Subtitle>
           <Search submit={this.submit} onChangeInput={this.onChangeInput}/>
         </Header>
         {results.map(data =>
