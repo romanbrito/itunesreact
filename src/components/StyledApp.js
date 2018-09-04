@@ -26,7 +26,7 @@ export const Subtitle = styled.p.attrs({
 
 export const AvModal = styled.figure.attrs({
   'aria-hidden': 'true',
-  className: "av-modal dn fixed top-0 bg-white br3 center"
+  className: "av-modal dn fixed top-0 bg-white br3 center z-2"
 })`
   top: 50%;
   left: 50%;
