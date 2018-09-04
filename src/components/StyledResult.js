@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
 export const Figure = styled.figure.attrs({
-  className: "f5 flex"
+  className: "f5 flex bg-black-10"
 })`
-  background-color: #444;
   flex: 1 1 200px;
   display: grid;
 `

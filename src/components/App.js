@@ -138,8 +138,12 @@ const fetchTerm = (term) => {
 // Reveal results
 const showResults = () => {
   const HEADER = document.querySelector('.header')
+  const MAIN = document.querySelector('.App')
   if (HEADER.getAttribute('aria-label') !== 'search') {
     HEADER.classList.remove('vh-100')
     HEADER.setAttribute('aria-label', 'search')
   }
+  MAIN.setAttribute("style", "background-image: url('')")
+  MAIN.classList.add('bg-navy')
+  HEADER.classList.add('bg-dark-blue')
 }

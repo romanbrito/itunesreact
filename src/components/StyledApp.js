@@ -30,7 +30,7 @@ export const Subtitle = styled.p.attrs({
 })``
 
 export const AvModal = styled.figure.attrs({
-  className: "av-modal dn fixed top-0 left-0 bg-black-70 center z-2 w-100 h-100"
+  className: "av-modal dn ma0 fixed top-0 left-0 bg-black-70 center z-2 w-100 h-100"
 })`
   padding-top: 100px;
 `
