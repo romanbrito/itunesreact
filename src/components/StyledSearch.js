@@ -9,7 +9,7 @@ export const SearchInput = styled.input.attrs({
 })`max-width: 500px;`
 
 export const SearchButton = styled.button.attrs({
-  className: "pointer w-100 w-20-ns"
+  className: "pointer w-100 w-20-ns bg-blue near-white"
 })`
   @media screen and (min-width: 480px) {
     max-width: 200px;

@@ -6,8 +6,13 @@ export const Container = styled.div.attrs({
 })``
 
 export const Main = styled.main.attrs({
-  className: "App sans-serif"
-})``
+  className: "App sans-serif bg-center"
+})`
+  background-image: url("http://res.cloudinary.com/spottermart/image/upload/c_scale,h_820/v1536059222/Dog.jpg");
+  @media screen and (min-width: 480px) {
+    background-image: url("http://res.cloudinary.com/spottermart/image/upload/c_scale,h_1425/v1536059222/Dog.jpg");
+  }
+`
 
 export const Header = styled.header.attrs({
   'aria-label': 'landing-page',
@@ -17,11 +22,11 @@ export const Header = styled.header.attrs({
 `
 
 export const Title = styled.h1.attrs({
-  className: "f-4"
+  className: "f2 fw7 red"
 })``
 
 export const Subtitle = styled.p.attrs({
-  className: "f-4"
+  className: "f3 fw7 near-white"
 })``
 
 export const AvModal = styled.figure.attrs({
