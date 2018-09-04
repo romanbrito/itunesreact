@@ -17,6 +17,12 @@ export const TrackName = styled.div.attrs({
   width: 215px;
 `
 
+export const TrackKind = styled.div.attrs({
+  className: "truncate"
+})`
+  width: 215px;
+`
+
 export const Preview = styled.div.attrs({
   className: "pointer"
 })``
