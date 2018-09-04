@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {FiInfo, FiPlayCircle, FiFilm, FiMusic, FiUser, FiCalendar} from 'react-icons/fi'
-import {Figure, Figcaption, TrackName, TrackKind, ArtistName, Preview, ReleaseDate, Image} from './StyledResult'
+import {Figure, Figcaption, TrackName, Link, TrackKind, ArtistName, Preview, ReleaseDate, Image} from './StyledResult'
 
 const Result = (props) =>
   <Figure>
@@ -14,7 +14,7 @@ const Result = (props) =>
     </Preview>}
     <Figcaption>
       {props.data.trackName &&
-      <TrackName><FiInfo/> {props.data.trackName}</TrackName>}
+      <Link target="_blank" href={props.data.trackViewUrl}><TrackName><FiInfo/> {props.data.trackName}</TrackName></Link>}
       {props.data.kind &&
       <TrackKind>{props.data.kind === 'feature-movie' ? <FiFilm/> : <FiMusic/>} {props.data.kind}</TrackKind>}
       {props.data.artistName &&

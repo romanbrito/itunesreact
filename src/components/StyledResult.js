@@ -21,6 +21,9 @@ export const Figcaption = styled.figcaption.attrs({
   grid-column: 2;
   grid-row: 1;
 `
+export const Link = styled.a.attrs({
+  className: "link white"
+})``
 
 export const TrackName = styled.div.attrs({
   className: "truncate"
