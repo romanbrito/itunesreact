@@ -25,21 +25,31 @@ export const Subtitle = styled.p.attrs({
 })``
 
 export const AvModal = styled.figure.attrs({
-  'aria-hidden': 'true',
-  className: "av-modal dn fixed top-0 bg-white br3 center z-2"
+  className: "av-modal dn fixed top-0 left-0 bg-black-70 center z-2 w-100 h-100"
 })`
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  padding-top: 100px;
+`
+
+export const AvModalContent = styled.div.attrs({
+  className: "modal-content center bg-white w-100 br3"
+})`
+  @media screen and (min-width: 480px) {
+  width: 700px;
+  }
 `
 
 export const MediaTitle = styled.h2.attrs({
-  className: "tc"
+  className: "tc pt2"
 })``
 
 export const Media = styled.video.attrs({
-  className: "media"
+  className: "media db center pb3"
 })`
   width: 320px;
   height: 240px;
+  
+  @media screen and (min-width: 480px) {
+  width: 640px;
+  height: 380px;
+  }
 `

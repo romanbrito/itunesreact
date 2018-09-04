@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Search from './Search'
 import Result from './Result'
 import {API} from '../constants'
-import {Container, Main, Header, Title, Subtitle, AvModal, MediaTitle, Media} from './StyledApp'
+import {Container, Main, Header, Title, Subtitle, AvModal, AvModalContent, MediaTitle, Media} from './StyledApp'
 
 class App extends Component {
 
@@ -31,10 +31,12 @@ class App extends Component {
         </Main>
 
         <AvModal>
-          <MediaTitle>{this.state.results.length > 0 && this.state.results[this.state.preview].trackName}</MediaTitle>
-          <Media controls>
-            Your browser does not support this media
-          </Media>
+          <AvModalContent>
+            <MediaTitle>{this.state.results.length > 0 && this.state.results[this.state.preview].trackName}</MediaTitle>
+            <Media controls>
+              Your browser does not support this media
+            </Media>
+          </AvModalContent>
         </AvModal>
 
       </Container>
@@ -72,7 +74,6 @@ class App extends Component {
   showAvModal = num => {
     const MEDIA = document.querySelector('.media')
     const MEDIAMODAL = document.querySelector('.av-modal')
-    const MAIN = document.querySelector('.App')
 
     // if preview is paused just continue playing
     if (this.state.avModal && this.state.preview === num) {
@@ -91,7 +92,7 @@ class App extends Component {
       MEDIA.play()
 
       // close media modal when click elsewhere
-      MAIN.addEventListener('click', e => {
+      MEDIAMODAL.addEventListener('click', e => {
         this.stopMedia()
       })
     }
