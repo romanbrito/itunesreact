@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Search from './Search'
 import Result from './Result'
 import {API} from '../constants'
-import {Container, Main, Header, Title, Subtitle, AvModal, Media} from './StyledApp'
+import {Container, Main, Header, Title, Subtitle, AvModal, MediaTitle, Media} from './StyledApp'
 
 class App extends Component {
 
@@ -31,7 +31,7 @@ class App extends Component {
         </Main>
 
         <AvModal>
-          <h2>{this.state.results.length > 0 && this.state.results[this.state.preview].trackName}</h2>
+          <MediaTitle>{this.state.results.length > 0 && this.state.results[this.state.preview].trackName}</MediaTitle>
           <Media controls>
             Your browser does not support this media
           </Media>

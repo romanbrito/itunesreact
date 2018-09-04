@@ -24,5 +24,5 @@ export const TrackKind = styled.div.attrs({
 `
 
 export const Preview = styled.div.attrs({
-  className: "pointer"
+  className: "pointer f1 dib"
 })``

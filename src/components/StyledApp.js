@@ -26,12 +26,16 @@ export const Subtitle = styled.p.attrs({
 
 export const AvModal = styled.figure.attrs({
   'aria-hidden': 'true',
-  className: "av-modal dn fixed top-0 bg-white center"
+  className: "av-modal dn fixed top-0 bg-white br3 center"
 })`
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
 `
+
+export const MediaTitle = styled.h2.attrs({
+  className: "tc"
+})``
 
 export const Media = styled.video.attrs({
   className: "media"
