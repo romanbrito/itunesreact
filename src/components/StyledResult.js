@@ -9,6 +9,7 @@ export const Figure = styled.figure.attrs({
 export const Image = styled.img.attrs({
   className: "h-100"
 })`
+  max-height: 100px;
   grid-column: 1;
   grid-row: 1;
 `
