@@ -7,9 +7,10 @@ export const Figure = styled.figure.attrs({
   display: grid;
 `
 export const Image = styled.img.attrs({
-  className: "h-100"
+  className: "h-100 w-100"
 })`
   max-height: 100px;
+  max-width: 67px;
   grid-column: 1;
   grid-row: 1;
 `
@@ -44,6 +45,7 @@ export const ReleaseDate = styled.div.attrs({
 export const Preview = styled.div.attrs({
   className: "pointer f1 flex flex-column justify-center items-center z-1"
 })`
+  max-width: 67px;
   grid-column: 1;
   grid-row: 1;
 `
