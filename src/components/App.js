@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Search from './Search'
 import Result from './Result'
 import {API} from '../constants'
-import {Main, Header, Title, Subtitle, AvModal, Media} from './StyledApp'
+import {Container, Main, Header, Title, Subtitle, AvModal, Media} from './StyledApp'
 
 class App extends Component {
 
@@ -10,30 +10,33 @@ class App extends Component {
     search: '',
     resultCount: 0,
     results: [],
-    avModal: false,
-    preview: 0
+    preview: 0,
+    avModal: false
   }
 
   render() {
     const {results} = this.state
 
     return (
-      <Main>
-        <Header>
-          <Title>iTunes Search with React</Title>
-          <Subtitle>Your favorite artists from the iTunes library</Subtitle>
-          <Search submit={this.submit} onChangeInput={this.onChangeInput}/>
-        </Header>
-        {results.map((data, idx) =>
-          <Result key={data.trackId ? data.trackId : data.collectionId} data={data} idx={idx} showAvModal={this.showAvModal}/>)}
+      <Container>
+        <Main>
+          <Header>
+            <Title>iTunes Search with React</Title>
+            <Subtitle>Your favorite artists from the iTunes library</Subtitle>
+            <Search submit={this.submit} onChangeInput={this.onChangeInput}/>
+          </Header>
+          {results.map((data, idx) =>
+            <Result key={data.trackId ? data.trackId : data.collectionId} data={data} idx={idx}
+                    showAvModal={this.showAvModal} stopMedia={this.stopMedia} pauseMedia={this.pauseMedia}/>)}
+        </Main>
 
         <AvModal>
-          <Media controls>
+          <Media>
             Your browser does not support this media
           </Media>
         </AvModal>
 
-      </Main>
+      </Container>
     )
   }
 
@@ -64,22 +67,53 @@ class App extends Component {
   }
   //
 
-  // Show AVmodal
+  // Show AVmodal and play
   showAvModal = num => {
-
-    this.setState({
-      avModal: true,
-      preview: num
-    })
-
     const MEDIA = document.querySelector('.media')
     const MEDIAMODAL = document.querySelector('.av-modal')
-    MEDIAMODAL.classList.remove('dn')
-    MEDIA.pause()
-    MEDIA.removeAttribute('src')
-    MEDIA.setAttribute('src', this.state.results[num].previewUrl)
-    MEDIA.load()
-    MEDIA.play()
+    const MAIN = document.querySelector('.App')
+
+    // if preview is paused just continue playing
+    if (this.state.avModal && this.state.preview === num) {
+      MEDIA.play()
+    } else { // else start a new preview
+      this.setState({
+        preview: num,
+        avModal: true
+      })
+
+      MEDIAMODAL.classList.remove('dn')
+      MEDIA.pause()
+      MEDIA.removeAttribute('src')
+      MEDIA.setAttribute('src', this.state.results[num].previewUrl)
+      MEDIA.load()
+      MEDIA.play()
+
+      // close media modal when click elsewhere
+      // MAIN.addEventListener('click', e => {
+      //   this.stopMedia()
+      // })
+    }
+  }
+
+  // Stop media
+  stopMedia = () => {
+    const MEDIA = document.querySelector('.media')
+    const MEDIAMODAL = document.querySelector('.av-modal')
+    if (this.state.avModal) {
+      MEDIAMODAL.classList.add('dn')
+      this.setState({avModal: false})
+      MEDIA.pause()
+      MEDIA.removeAttribute('src')
+    }
+  }
+
+  // Stop media
+  pauseMedia = () => {
+    const MEDIA = document.querySelector('.media')
+    if (this.state.avModal) {
+      MEDIA.pause()
+    }
   }
 
 }
@@ -106,5 +140,4 @@ const showResults = () => {
     HEADER.classList.remove('vh-100')
     HEADER.setAttribute('aria-label', 'search')
   }
-
 }

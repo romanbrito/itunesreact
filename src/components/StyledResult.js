@@ -20,3 +20,11 @@ export const TrackName = styled.div.attrs({
 export const Preview = styled.div.attrs({
   className: "pointer"
 })``
+
+export const StopPreview = styled.div.attrs({
+  className: "pointer"
+})``
+
+export const PausePreview = styled.div.attrs({
+  className: "pointer"
+})``

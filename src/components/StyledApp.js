@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 import '../css/App.css'
 
+export const Container = styled.div.attrs({
+  className: "container"
+})``
+
 export const Main = styled.main.attrs({
   className: "App sans-serif"
 })``
@@ -22,7 +26,7 @@ export const Subtitle = styled.p.attrs({
 
 export const AvModal = styled.figure.attrs({
   'aria-hidden': 'true',
-  className: "av-modal dn fixed"
+  className: "av-modal dn fixed top-0"
 })``
 
 export const Media = styled.video.attrs({

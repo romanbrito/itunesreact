@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {FiInfo, FiPlayCircle} from 'react-icons/fi'
-import {Figure, Figcaption, TrackName, Preview} from './StyledResult'
+import {FiInfo, FiPlayCircle, FiStopCircle, FiPauseCircle} from 'react-icons/fi'
+import {Figure, Figcaption, TrackName, Preview, StopPreview, PausePreview} from './StyledResult'
 
 const Result = (props) =>
   <Figure>
@@ -15,6 +15,18 @@ const Result = (props) =>
       >
         <FiPlayCircle/>
       </Preview>}
+      {props.data.previewUrl &&
+      <StopPreview
+        onClick={() => props.stopMedia()}
+      >
+        <FiStopCircle/>
+      </StopPreview>}
+      {props.data.previewUrl &&
+      <PausePreview
+        onClick={() => props.pauseMedia()}
+      >
+        <FiPauseCircle/>
+      </PausePreview>}
     </Figcaption>
   </Figure>
 
