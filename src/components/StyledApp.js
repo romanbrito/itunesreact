@@ -26,8 +26,12 @@ export const Subtitle = styled.p.attrs({
 
 export const AvModal = styled.figure.attrs({
   'aria-hidden': 'true',
-  className: "av-modal dn fixed top-0"
-})``
+  className: "av-modal dn fixed top-0 bg-white"
+})`
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+`
 
 export const Media = styled.video.attrs({
   className: "media"

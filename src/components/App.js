@@ -31,7 +31,8 @@ class App extends Component {
         </Main>
 
         <AvModal>
-          <Media>
+          <h2>{this.state.results.length > 0 && this.state.results[this.state.preview].trackName}</h2>
+          <Media controls>
             Your browser does not support this media
           </Media>
         </AvModal>
@@ -90,9 +91,9 @@ class App extends Component {
       MEDIA.play()
 
       // close media modal when click elsewhere
-      // MAIN.addEventListener('click', e => {
-      //   this.stopMedia()
-      // })
+      MAIN.addEventListener('click', e => {
+        this.stopMedia()
+      })
     }
   }
 
