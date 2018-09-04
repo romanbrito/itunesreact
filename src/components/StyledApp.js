@@ -58,3 +58,7 @@ export const Media = styled.video.attrs({
   height: 380px;
   }
 `
+
+export const CloseModal = styled.button.attrs({
+  className: "pointer bg-blue near-white w3 ma2"
+})``

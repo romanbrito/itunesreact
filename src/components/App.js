@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Search from './Search'
 import Result from './Result'
 import {API} from '../constants'
-import {Container, Main, Header, Title, Subtitle, AvModal, AvModalContent, MediaTitle, Media} from './StyledApp'
+import {Container, Main, Header, Title, Subtitle, AvModal, AvModalContent, MediaTitle, Media, CloseModal} from './StyledApp'
 
 class App extends Component {
 
@@ -36,6 +36,11 @@ class App extends Component {
             <Media controls>
               Your browser does not support this media
             </Media>
+            <CloseModal
+            onClick={() => this.stopMedia()}
+            >
+              Close
+            </CloseModal>
           </AvModalContent>
         </AvModal>
 
