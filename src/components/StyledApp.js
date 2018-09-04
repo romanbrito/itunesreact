@@ -19,3 +19,15 @@ export const Title = styled.h1.attrs({
 export const Subtitle = styled.p.attrs({
   className: "f-4"
 })``
+
+export const AvModal = styled.figure.attrs({
+  'aria-hidden': 'true',
+  className: "av-modal dn fixed"
+})``
+
+export const Media = styled.video.attrs({
+  className: "media"
+})`
+  width: 320px;
+  height: 240px;
+`

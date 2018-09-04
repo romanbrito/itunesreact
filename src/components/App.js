@@ -2,14 +2,16 @@ import React, {Component} from 'react'
 import Search from './Search'
 import Result from './Result'
 import {API} from '../constants'
-import {Main, Header, Title, Subtitle} from './StyledApp'
+import {Main, Header, Title, Subtitle, AvModal, Media} from './StyledApp'
 
 class App extends Component {
 
   state = {
     search: '',
-    resultCount:0,
-    results: []
+    resultCount: 0,
+    results: [],
+    avModal: false,
+    preview: 0
   }
 
   render() {
@@ -22,8 +24,15 @@ class App extends Component {
           <Subtitle>Your favorite artists from the iTunes library</Subtitle>
           <Search submit={this.submit} onChangeInput={this.onChangeInput}/>
         </Header>
-        {results.map(data =>
-          <Result key={data.trackId ? data.trackId: data.collectionId} data={data}/>)}
+        {results.map((data, idx) =>
+          <Result key={data.trackId ? data.trackId : data.collectionId} data={data} idx={idx} showAvModal={this.showAvModal}/>)}
+
+        <AvModal>
+          <Media controls>
+            Your browser does not support this media
+          </Media>
+        </AvModal>
+
       </Main>
     )
   }
@@ -48,12 +57,31 @@ class App extends Component {
   // Generate new state after input has changed
   newState = (element, newElement) => {
     const newState = Object.keys(this.state).reduce((prev, curr) => {
-      curr === element ? prev[curr] = newElement: prev[curr] = this.state[curr]
+      curr === element ? prev[curr] = newElement : prev[curr] = this.state[curr]
       return prev
     }, {})
     this.setState(newState)
   }
   //
+
+  // Show AVmodal
+  showAvModal = num => {
+
+    this.setState({
+      avModal: true,
+      preview: num
+    })
+
+    const MEDIA = document.querySelector('.media')
+    const MEDIAMODAL = document.querySelector('.av-modal')
+    MEDIAMODAL.classList.remove('dn')
+    MEDIA.pause()
+    MEDIA.removeAttribute('src')
+    MEDIA.setAttribute('src', this.state.results[num].previewUrl)
+    MEDIA.load()
+    MEDIA.play()
+  }
+
 }
 
 export default App

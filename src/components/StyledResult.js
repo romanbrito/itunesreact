@@ -10,3 +10,13 @@ export const Figure = styled.figure.attrs({
 export const Figcaption = styled.figcaption.attrs({
   className: "ph2"
 })``
+
+export const TrackName = styled.div.attrs({
+  className: "truncate"
+})`
+  width: 215px;
+`
+
+export const Preview = styled.div.attrs({
+  className: "pointer"
+})``
