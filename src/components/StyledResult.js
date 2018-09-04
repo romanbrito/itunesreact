@@ -37,7 +37,7 @@ export const ArtistName = styled.div.attrs({
 })``
 
 export const ReleaseDate = styled.div.attrs({
-  clasName: "truncate"
+  className: "truncate"
 })``
 
 export const Preview = styled.div.attrs({
