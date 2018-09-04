@@ -92,8 +92,8 @@ class App extends Component {
       MEDIA.play()
 
       // close media modal when click elsewhere
-      MEDIAMODAL.addEventListener('click', e => {
-        this.stopMedia()
+      window.addEventListener('click', e => {
+        e.target === MEDIAMODAL && this.stopMedia()
       })
     }
   }
@@ -107,14 +107,6 @@ class App extends Component {
       this.setState({avModal: false})
       MEDIA.pause()
       MEDIA.removeAttribute('src')
-    }
-  }
-
-  // Stop media
-  pauseMedia = () => {
-    const MEDIA = document.querySelector('.media')
-    if (this.state.avModal) {
-      MEDIA.pause()
     }
   }
 

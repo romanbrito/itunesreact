@@ -30,7 +30,7 @@ export const Subtitle = styled.p.attrs({
 })``
 
 export const AvModal = styled.figure.attrs({
-  className: "av-modal dn ma0 fixed top-0 left-0 bg-black-70 center z-2 w-100 h-100"
+  className: "av-modal dn ma0 fixed z-1 top-0 left-0 bg-black-70 w-100 h-100"
 })`
   padding-top: 100px;
 `
@@ -48,7 +48,7 @@ export const MediaTitle = styled.h2.attrs({
 })``
 
 export const Media = styled.video.attrs({
-  className: "media db center pb3"
+  className: "media db center pb3 ma0"
 })`
   width: 320px;
   height: 240px;
